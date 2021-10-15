@@ -5,8 +5,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const routes = require('./routes/routes.js');
 
-mongoose.connect(`mongodb+srv://${process.env.USER}:${process.env.PASS}@urlcluster.bvhwg.mongodb.net/${process.env.DATABASE}?retryWrites=true&w=majority`);
-
+mongoose.connect(process.env.DATABASE_URL)
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
